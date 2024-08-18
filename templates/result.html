@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Image Resized</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='styles.css') }}"
+		/>
+	</head>
+	<body class="bg-stone-900 w-screen h-screen flex justify-center items-center">
+		<div class="upload-card p-8 px-16">
+			<h1 class="mb-10 text-4xl font-bold text-orange-300">Image Resized</h1>
+
+			<a href="{{ url_for('download_file', filename=filename) }}"
+				><button
+					class="px-4 py-2 bg-orange-50 text-orange-700 font-semibold rounded-md hover:bg-orange-100"
+				>
+					Download Resized Image
+				</button></a
+			>
+		</div>
+	</body>
+</html>

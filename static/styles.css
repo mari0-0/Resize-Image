@@ -1,0 +1,15 @@
+.upload-card {
+  backdrop-filter: blur(3px) saturate(100%);
+  -webkit-backdrop-filter: blur(3px) saturate(100%);
+  background-color: rgba(231, 153, 69, 0.085);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+body {
+  background-image:
+      linear-gradient(to right, rgb(69, 69, 69) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(74, 74, 74) 1px, transparent 1px);
+  background-size: 3.2rem 3.2rem;
+  background-position: center center;
+}
