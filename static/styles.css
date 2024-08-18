@@ -1,9 +1,7 @@
-.upload-card {
-  backdrop-filter: blur(3px) saturate(100%);
-  -webkit-backdrop-filter: blur(3px) saturate(100%);
-  background-color: rgba(231, 153, 69, 0.085);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,4 +10,42 @@ body {
       linear-gradient(to bottom, rgb(74, 74, 74) 1px, transparent 1px);
   background-size: 3.2rem 3.2rem;
   background-position: center center;
+}
+
+.upload-card {
+  backdrop-filter: blur(3px) saturate(100%);
+  -webkit-backdrop-filter: blur(3px) saturate(100%);
+  background-color: rgba(231, 153, 69, 0.085);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+#trailer{
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  
+  /* pointer-events: none; */
+  opacity: 0;
+  transition: opacity 500ms ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#right-up{
+  width: 30px;
+  height: 30px;
+}
+
+body:hover #trailer{
+  opacity: 1;
 }

@@ -8,9 +8,35 @@
 			rel="stylesheet"
 			href="{{ url_for('static', filename='styles.css') }}"
 		/>
+		<script src="https://kit.fontawesome.com/b481283466.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="bg-stone-900 w-screen h-screen flex justify-center items-center">
-		<div class="upload-card p-8 px-16">
+		<div id="trailer">
+			<a href="https://github.com/mari0-0" target="_blank" rel="noopener noreferrer" class="flex flex-col justify-center items-center">
+				<img
+					id="right-up"
+					src="{{ url_for('static', filename='right-up.png') }}"
+					alt=""
+				/>
+			</a>
+			<p class="text-sm text-black font-bold pointer-events-none">GitHub</p>
+			<!-- <svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+			>
+				<path
+					d="M7 17L17 7M17 7H9M17 7V15"
+					stroke="black"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+			</svg> -->
+		</div>
+		<div class="upload-card interactable p-8 px-16">
 			<h1 class="mb-10 text-4xl font-bold text-orange-300">Image Resized</h1>
 
 			<a href="{{ url_for('download_file', filename=filename) }}"
@@ -21,5 +47,6 @@
 				</button></a
 			>
 		</div>
+		<script src="{{ url_for('static', filename='app.js') }}"></script>
 	</body>
 </html>
