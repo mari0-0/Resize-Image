@@ -28,26 +28,18 @@
 				/>
 			</a>
 			<p class="text-sm text-black font-bold pointer-events-none">GitHub</p>
-			<!-- <svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-			>
-				<path
-					d="M7 17L17 7M17 7H9M17 7V15"
-					stroke="black"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				/>
-			</svg> -->
 		</div>
 		<div class="upload-card interactable p-8 px-32">
-			<h1 class="mb-10 text-4xl font-bold text-orange-300 text-center">
+			<h1 class="mb-6 text-4xl font-bold text-orange-300 text-center">
 				Image Resizer
 			</h1>
+
+			{% if isLarge %}
+			<p class="text-center text-sm text-red-300 mb-6">
+				Please enter image size less than 4.5MB
+			</p>
+
+			{% endif %}
 
 			<form
 				class="flex flex-col gap-5 justify-center space-x-6"
@@ -56,11 +48,7 @@
 				enctype="multipart/form-data"
 			>
 				<label>
-					<span
-						class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-orange-300"
-					>
-						Width
-					</span>
+					<span class="block text-sm font-medium text-orange-300"> Width </span>
 					<input
 						type="number"
 						name="width"
@@ -70,10 +58,8 @@
 					/>
 				</label>
 
-				<div style="margin-left: 0;">
-					<span
-						class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-orange-300"
-					>
+				<div style="margin-left: 0">
+					<span class="block text-sm font-medium text-orange-300">
 						Height
 					</span>
 					<input
@@ -85,7 +71,7 @@
 					/>
 				</div>
 
-				<label class="block self-center ">
+				<label class="block self-center">
 					<span class="sr-only">Choose Image</span>
 					<input
 						type="file"

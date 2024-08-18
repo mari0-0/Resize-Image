@@ -19,6 +19,16 @@ def index():
             return 'No selected file'
         
         if file:
+            # Check the file size
+            file.seek(0, os.SEEK_END)  # Move the cursor to the end of the file
+            file_size = file.tell()  # Get the current position of cursor
+            file.seek(0, os.SEEK_SET)  # Reset the cursor to the start of the file
+
+            max_size = 4.48 * 1024 * 1024  # 4.5 MB
+
+            if file_size > max_size:
+              return render_template('upload.html', isLarge=True)
+
             filename = file.filename
             file_path = os.path.join('/tmp', filename)  # Save the uploaded file to /tmp
             file.save(file_path)
@@ -27,7 +37,6 @@ def index():
             height = int(request.form['height'])
             resized_filename = f"resized_{filename}"
             resized_path = os.path.join('/tmp', resized_filename)  # Save the resized image to /tmp
-            
             resize_image(file_path, resized_path, width, height)
             
             return render_template('result.html', filename=resized_filename)
@@ -36,7 +45,7 @@ def index():
 
 @app.route('/download/<filename>')
 def download_file(filename):
-    return send_file(os.path.join('/tmp', filename), as_attachment=True)  # Serve the file from /tmp
+    return send_file(os.path.join('/tmp', filename), as_attachment=True)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
