@@ -5,7 +5,7 @@ from resizer import resize_image
 app = Flask(__name__)
 
 # Create /tmp if it doesn't exist for LOCAL MACHINE ONLY
-# os.makedirs('/tmp', exist_ok=True)
+os.makedirs('/tmp', exist_ok=True)
 
 
 @app.route('/', methods=['GET', 'POST'])
